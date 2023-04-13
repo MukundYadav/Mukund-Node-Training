@@ -7,8 +7,8 @@ let fs = require('fs');
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
-let buddyRoute = require("./routes/buddy");
-app.use("/buddy", buddyRoute);
+let buddyRoute = require("./routes/buddies.routes.js");
+app.use("/buddies", buddyRoute);
 
 app.listen(port , () => {
     if(!fs.existsSync("./assets/cdw_ace23_buddies.json")){
